@@ -18,6 +18,11 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
+    @GetMapping
+    public String testServerAvailable(){
+        return "Server is UP.";
+    }
+
     @GetMapping("/employees")
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
